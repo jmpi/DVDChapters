@@ -1,2 +1,2 @@
 # DvdChatpers
-Extractt chapters (tiltle) from a DVD as individual VOB files
+Extract chapters (tiltle) from a music DVD as individual VOB files.
