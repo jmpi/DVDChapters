@@ -9,15 +9,15 @@ package DvdChapter.py
  Output:
    return Code  : 0 if ok
                   1 otherwise """
-from sys import stdout
                   
-__version__ = "1.0"
-__date__ = "2018/03/20"
-__author__ = "Alten SO"
+__version__ = "2.0"
+__date__ = "2024/19/10"
+__author__ = "jmpi"
 
 #-------------------- Import part -------------------------------------
 # module importation 
 #--------------------------------------------------------------------------
+from sys import stdout
 import sys, os.path, re, os
 import easygui
 import glob
@@ -25,8 +25,8 @@ import subprocess , shutil
 import os, re
 from os.path import basename
 from unidecode import unidecode
-
 import configparser
+
 config = configparser.ConfigParser()
 config.read('DvdChapters.cfg')
 updateConfigFile = False
@@ -39,10 +39,7 @@ isofile = None
 mounteddrive = ""
 DriveList =""
 
-
 try:    
-
-
     if 'PARAMETERS' not in config : 
       config['PARAMETERS'] = {}
     if 'DVDDecrypter' not in config['PARAMETERS'] or \
@@ -64,7 +61,7 @@ try:
       not os.path.isdir(config['PARAMETERS']['Destfolder']) :
         updateConfigFile = True
         if 'Destfolder' not in config['PARAMETERS']:
-            while not os.path.isdir(Destfolder):
+           while not os.path.isdir(Destfolder):
                 Destfolder = easygui.diropenbox("Select destination folder ", "Destination folder", default=os.environ['userprofile'])
             config['PARAMETERS']['Destfolder'] = Destfolder
     else:
